@@ -42,8 +42,13 @@
     // Find the comment with this ID
     // delete the comment with the ID of 823423
     const comment823423index = comments.findIndex(c => c.id === 823423);
-    const newComments = comments.slice(0, comment823423index).concat(comments.slice(comment823423index+1, comments.length));
+    const newComments = comments.slice(0, comment823423index).concat(comments.slice(comment823423index+1));
+    const newComments2 = [
+      ...comments.slice(0, comment823423index),
+      ...comments.slice(comment823423index + 1)
+    ];
     console.table(newComments);
+    console.table(newComments2);
 
   </script>
 </body>
