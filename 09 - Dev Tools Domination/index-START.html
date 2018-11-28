@@ -18,28 +18,56 @@
     }
 
     // Regular
+    console.log('hello');
 
     // Interpolated
+    console.log('hello I a ma %s string!', dogs[0].name);
+    console.log(`hello I am another ${dogs[0].name} string`);
 
     // Styled
+    console.log('%c I am a big red text', 'font-size: 30px; background: red; text-shadow: 5px 5px 0 blue');
 
     // warning!
+    console.warn('watch out this is a warning!!');
 
     // Error :|
+    console.error('watch out this is an ERROR!!');
 
     // Info
+    console.info('this is info?');
 
     // Testing
+    const p = document.querySelector('p');
+    console.assert(p.classList.contains('ouch'), 'That is wrong!!');
 
     // clearing
+    // console.clear();
 
     // Viewing DOM Elements
+    console.dir(p); 
 
     // Grouping together
+    dogs.forEach(dog => {
+      console.group(`${dog.name}`);
+      console.log(`This is ${dog.name}`);
+      console.log(`${dog.name} is ${dog.age} years old`);
+      console.groupEnd();
+    })
 
     // counting
+    console.count('something');
+    console.count('something');
+    console.count('something');
+    console.count('something');
 
     // timing
+    console.time('fetching data');
+    fetch('https://api.github.com/users/alexdand')
+      .then(data => data.json())
+      .then(data => {
+        console.timeEnd('fetching data');
+        console.log(data);
+      });
 
   </script>
 </body>
