@@ -7,6 +7,24 @@
 </head>
 <body>
 <script>
+  let secret = ['a', 'c', 'ArrowUp', 'b', 'ArrowUp', 'b', 'a', 'ArrowDown'];
+  let index = 0;
+
+  window.addEventListener('keyup', function(e) {
+    if (e.key === secret[index]) {
+      index++;
+    } else {
+      index = 0;
+    }
+    if (index === secret.length) {
+      displayMessage();
+      cornify_add();
+    }
+  });
+
+  function displayMessage() {
+    console.log('Congratulations! You unblocked a secret unicorn!');
+  }
 </script>
 </body>
 </html>
